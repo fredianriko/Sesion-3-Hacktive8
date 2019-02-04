@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		@import url(style.css);
+</style>
+</head>
+<body>
+
+
+
+	<div class="fav">	<!-- block ke enam -->
+			<h3 class="favorite"><b>My favorite video is</h3>
+				<ol >
+					<li><iframe width="853" height="480" src="https://www.youtube.com/embed/2eUDm2_ZSwc?list=RDEMLBUlEtqcKoLhxGS0ACCSGQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li><br>
+					<li><iframe width="853" height="480" src="https://www.youtube.com/embed/Hn7WDtF3nKA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li><br>
+					<li><iframe width="853" height="480" src="https://www.youtube.com/embed/U68MJz9DrI4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+				</ol>
+			</div>
+		</article>
+	</section>
+<hr>
+	
+	<div class="header" id="myHeader">
+	  <h1>Image Grid</h1>
+	  <p>Click on the buttons to change the grid view.</p>
+	  <button class="btn" onclick="one()">1</button>
+	  <button class="btn active" onclick="two()">2</button>
+	  <button class="btn" onclick="four()">3</button>
+	</div>
+
+	<div class="row">
+		<div class="column"> <!-- block gambar -->
+			<h1 style="color: white">GAMBAR CUY</h1>
+			<img src="lambo1.jpg">
+			<img src="lambo2.jpg">
+			<img src="lambo3.jpg">
+			<img src="lambo4.jpg">
+			<img src="bugatti.jpg">
+			<img src="amg.jpg">
+			<img src="gtr.jpg">
+			<img src="lambo5.jpg">
+		</div> 
+		<div class="column">
+			<img src="lambo6.jpg">
+			<img src="lambo7.jpg">
+			<img src="lambo8.jpg">
+			<img src="lambo9.jpg">
+			<img src="lambo10.jpg">
+			<img src="lambo11.jpg">
+			<img src="lambo12.jpg">
+			<img src="lambo13.jpg">
+
+		</div>
+		<div class="column">
+			<img src="lambo14.jpg">
+			<img src="lambo15.jpg">
+			<img src="lambo16.jpg">
+			<img src="lambo17.jpg">
+			<img src="lambo18.jpg">
+			<img src="lambo19.jpg">
+			<img src="lambo20.jpg">
+			<img src="lambo21.jpg">
+		</div>
+	</div>
+</div>
+<hr>
+
+
+<script>
+// Get the elements with class="column"
+var elements = document.getElementsByClassName("column");
+
+// Declare a loop variable
+var i;
+
+// Full-width images
+function one() {
+    for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "100%";  // IE10
+    elements[i].style.flex = "100%";
+  }
+}
+
+// Two images side by side
+function two() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "50%";  // IE10
+    elements[i].style.flex = "50%";
+  }
+}
+
+// Four images side by side
+function four() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "25%";  // IE10
+    elements[i].style.flex = "25%";
+  }
+}
+
+// Add active class to the current button (highlight it)
+var header = document.getElementById("myHeader");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+</body>
+</html>
